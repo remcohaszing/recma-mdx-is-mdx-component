@@ -1,6 +1,6 @@
 {
   "name": "recma-mdx-is-mdx-component",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "A recma plugin to define the isMdxComponent property on MDX components.",
   "keywords": [
     "is-mdx-component",
