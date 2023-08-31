@@ -2,13 +2,13 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 
 import { compile, evaluate } from '@mdx-js/mdx'
-import { recmaPluginInjectisMDXComponent } from 'recma-mdx-is-mdx-component'
+import recmaPluginIsMdxComponent from 'recma-mdx-is-mdx-component'
 
 // eslint-disable-next-line no-empty-function
 function noop() {}
 
 test('define isMDXComponent', async () => {
-  const { value } = await compile('', { recmaPlugins: [recmaPluginInjectisMDXComponent] })
+  const { value } = await compile('', { recmaPlugins: [recmaPluginIsMdxComponent] })
 
   assert.equal(
     value,
@@ -33,7 +33,7 @@ test('define isMDXComponent', async () => {
 
 test('Can be evaluated', async () => {
   const module = await evaluate('', {
-    recmaPlugins: [recmaPluginInjectisMDXComponent],
+    recmaPlugins: [recmaPluginIsMdxComponent],
     Fragment: noop,
     jsx: noop,
     jsxs: noop
