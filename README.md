@@ -5,7 +5,7 @@
 [![npm downloads](https://img.shields.io/npm/dm/recma-mdx-is-mdx-component)](https://www.npmjs.com/package/recma-mdx-is-mdx-component)
 [![codecov](https://codecov.io/gh/remcohaszing/recma-mdx-is-mdx-component/branch/main/graph/badge.svg)](https://codecov.io/gh/remcohaszing/recma-mdx-is-mdx-component)
 
-A recma plugin to define the `isMdxComponent` property on MDX components.
+A recma plugin to define the `isMDXComponent` property on MDX components.
 
 ## Table of Contents
 
@@ -23,7 +23,7 @@ npm install recma-mdx-is-mdx-component
 
 ## Usage
 
-This recma plugin assigns `true` to the property `MDXContent.isMdxComponent`.
+This recma plugin assigns `true` to the property `MDXContent.isMDXComponent`.
 
 For example, given a file named `example.mdx` with the following contents:
 
@@ -37,11 +37,11 @@ The following script:
 import { readFile } from 'node:fs/promises'
 
 import { compile } from '@mdx-js/mdx'
-import recmaPluginInjectIsMdxComponent from 'recma-mdx-is-mdx-component'
+import recmaPluginInjectisMDXComponent from 'recma-mdx-is-mdx-component'
 
 const { contents } = await compile(await readFile('example.mdx'), {
   jsx: true,
-  recmaPlugins: [recmaPluginInjectIsMdxComponent]
+  recmaPlugins: [recmaPluginInjectisMDXComponent]
 })
 console.log(contents)
 ```
@@ -49,7 +49,7 @@ console.log(contents)
 Roughly yields:
 
 ```jsx
-MDXContent.isMdxComponent = true
+MDXContent.isMDXComponent = true
 export default function MDXContent() {
   return <p>Some MDX content</p>
 }

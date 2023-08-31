@@ -1,5 +1,5 @@
 /**
- * Inserty a conditional assignment of `MDXContent.isMdxComponent = true` in the AST.
+ * Inserty a conditional assignment of `MDXContent.isMDXComponent = true` in the AST.
  *
  * @param {import('estree').Program} ast
  *   The AST to transform.
@@ -15,7 +15,7 @@ function transformer(ast) {
       left: {
         type: 'MemberExpression',
         object: { type: 'Identifier', name: 'MDXContent' },
-        property: { type: 'Identifier', name: 'isMdxComponent' },
+        property: { type: 'Identifier', name: 'isMDXComponent' },
         computed: false,
         optional: false
       },
@@ -27,6 +27,6 @@ function transformer(ast) {
 /**
  * @type {import('unified').Plugin<[], import('estree').Program>}
  *
- * A recma plugin to define the `isMdxComponent` property on MDX components.
+ * A recma plugin to define the `isMDXComponent` property on MDX components.
  */
-export const recmaPluginInjectIsMdxComponent = () => transformer
+export const recmaPluginInjectisMDXComponent = () => transformer

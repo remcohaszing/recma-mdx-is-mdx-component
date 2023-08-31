@@ -2,19 +2,19 @@ import assert from 'node:assert/strict'
 import { test } from 'node:test'
 
 import { compile, evaluate } from '@mdx-js/mdx'
-import { recmaPluginInjectIsMdxComponent } from 'recma-mdx-is-mdx-component'
+import { recmaPluginInjectisMDXComponent } from 'recma-mdx-is-mdx-component'
 
 // eslint-disable-next-line no-empty-function
 function noop() {}
 
-test('define isMdxComponent', async () => {
-  const { value } = await compile('', { recmaPlugins: [recmaPluginInjectIsMdxComponent] })
+test('define isMDXComponent', async () => {
+  const { value } = await compile('', { recmaPlugins: [recmaPluginInjectisMDXComponent] })
 
   assert.equal(
     value,
     [
       '/*@jsxRuntime automatic @jsxImportSource react*/',
-      'MDXContent.isMdxComponent = true;',
+      'MDXContent.isMDXComponent = true;',
       'import {Fragment as _Fragment, jsx as _jsx} from "react/jsx-runtime";',
       'function _createMdxContent(props) {',
       '  return _jsx(_Fragment, {});',
@@ -33,12 +33,12 @@ test('define isMdxComponent', async () => {
 
 test('Can be evaluated', async () => {
   const module = await evaluate('', {
-    recmaPlugins: [recmaPluginInjectIsMdxComponent],
+    recmaPlugins: [recmaPluginInjectisMDXComponent],
     Fragment: noop,
     jsx: noop,
     jsxs: noop
   })
 
   // @ts-expect-error The type definitions don’t understand this property.
-  assert.equal(module.default.isMdxComponent, true)
+  assert.equal(module.default.isMDXComponent, true)
 })
