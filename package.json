@@ -1,0 +1,42 @@
+{
+  "name": "recma-mdx-is-mdx-component",
+  "version": "0.0.0",
+  "description": "A recma plugin to define the isMdxComponent property on MDX components.",
+  "keywords": [
+    "is-mdx-component",
+    "ismdxcomponent",
+    "mdx",
+    "recma",
+    "recma-plugin"
+  ],
+  "homepage": "https://github.com/remcohaszing/recma-mdx-is-mdx-component#readme",
+  "bugs": "https://github.com/remcohaszing/recma-mdx-is-mdx-component/issues",
+  "repository": "remcohaszing/recma-mdx-is-mdx-component",
+  "funding": "https://github.com/sponsors/remcohaszing",
+  "license": "MIT",
+  "author": "Remco Haszing <remcohaszing@gmail.com>",
+  "sideEffects": false,
+  "type": "module",
+  "exports": "./index.js",
+  "files": [],
+  "scripts": {
+    "prepack": "tsc --build",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "@types/estree": "^1.0.0",
+    "unified": "^10.0.0"
+  },
+  "devDependencies": {
+    "@mdx-js/mdx": "^2.0.0",
+    "@types/node": "^20.0.0",
+    "eslint": "^8.0.0",
+    "eslint-config-remcohaszing": "^10.0.0",
+    "eslint-plugin-jsx-a11y": "^6.0.0",
+    "eslint-plugin-react": "^7.0.0",
+    "prettier": "^3.0.0",
+    "remark-cli": "^11.0.0",
+    "remark-preset-remcohaszing": "^2.0.0",
+    "typescript": "^5.0.0"
+  }
+}

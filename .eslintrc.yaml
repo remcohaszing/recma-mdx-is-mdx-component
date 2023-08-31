@@ -1,0 +1,5 @@
+root: true
+extends:
+  - remcohaszing
+rules:
+  no-use-before-define: off
