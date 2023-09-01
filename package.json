@@ -18,7 +18,9 @@
   "sideEffects": false,
   "type": "module",
   "exports": "./index.js",
-  "files": [],
+  "files": [
+    "./index.*"
+  ],
   "scripts": {
     "prepack": "tsc --build",
     "test": "node --test"
