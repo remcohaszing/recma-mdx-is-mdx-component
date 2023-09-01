@@ -29,6 +29,6 @@ function transformer(ast) {
  *
  * A recma plugin to define the `isMDXComponent` property on MDX components.
  */
-export const recmaPluginInjectisMDXComponent = () => transformer
+const recmaMdxIsMdxComponent = () => transformer
 
-export default recmaPluginInjectisMDXComponent
+export default recmaMdxIsMdxComponent
