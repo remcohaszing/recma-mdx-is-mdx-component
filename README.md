@@ -61,7 +61,7 @@ The default export is a recma plugin. It takes no options.
 
 ## Compatibility
 
-This project is compatible with Node.js 16 or greater.
+This project is compatible with Node.js 20 or greater.
 
 ## License
 
