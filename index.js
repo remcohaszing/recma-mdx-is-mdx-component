@@ -1,7 +1,12 @@
 /**
+ * @import { Program } from 'estree'
+ * @import { Plugin } from 'unified'
+ */
+
+/**
  * Inserty a conditional assignment of `MDXContent.isMDXComponent = true` in the AST.
  *
- * @param {import('estree').Program} ast
+ * @param {Program} ast
  *   The AST to transform.
  * @returns {undefined}
  */
@@ -25,7 +30,7 @@ function transformer(ast) {
 }
 
 /**
- * @type {import('unified').Plugin<[], import('estree').Program>}
+ * @type {Plugin<[], Program>}
  *
  * A recma plugin to define the `isMDXComponent` property on MDX components.
  */
