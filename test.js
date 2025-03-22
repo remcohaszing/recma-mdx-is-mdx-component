@@ -13,19 +13,20 @@ test('define isMDXComponent', async () => {
   assert.equal(
     value,
     [
-      '/*@jsxRuntime automatic @jsxImportSource react*/',
-      'MDXContent.isMDXComponent = true;',
       'import {Fragment as _Fragment, jsx as _jsx} from "react/jsx-runtime";',
+      '(MDXContent.isMDXComponent = true);',
       'function _createMdxContent(props) {',
       '  return _jsx(_Fragment, {});',
       '}',
-      'function MDXContent(props = {}) {',
+      'export default function MDXContent(props = {}) {',
       '  const {wrapper: MDXLayout} = props.components || ({});',
-      '  return MDXLayout ? _jsx(MDXLayout, Object.assign({}, props, {',
-      '    children: _jsx(_createMdxContent, props)',
-      '  })) : _createMdxContent(props);',
+      '  return MDXLayout ? _jsx(MDXLayout, {',
+      '    ...props,',
+      '    children: _jsx(_createMdxContent, {',
+      '      ...props',
+      '    })',
+      '  }) : _createMdxContent(props);',
       '}',
-      'export default MDXContent;',
       ''
     ].join('\n')
   )

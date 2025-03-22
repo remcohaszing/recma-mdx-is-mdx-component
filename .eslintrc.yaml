@@ -5,3 +5,4 @@ rules:
   no-use-before-define: off
   jsdoc/check-tag-names: off
   jsdoc/no-undefined-types: off
+  jsdoc/valid-types: off

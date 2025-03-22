@@ -1,32 +1,15 @@
 /**
  * @import { Program } from 'estree'
- * @import { Plugin } from 'unified'
+ * @import { Plugin, Transformer } from 'unified'
  */
 
+import { define } from 'unist-util-mdx-define'
+
 /**
- * Inserty a conditional assignment of `MDXContent.isMDXComponent = true` in the AST.
- *
- * @param {Program} ast
- *   The AST to transform.
- * @returns {undefined}
+ * @type {Transformer<Program>}
  */
-function transformer(ast) {
-  // This needs to be defined before the return statement if the user uses evaluate()
-  ast.body.unshift({
-    type: 'ExpressionStatement',
-    expression: {
-      type: 'AssignmentExpression',
-      operator: '=',
-      left: {
-        type: 'MemberExpression',
-        object: { type: 'Identifier', name: 'MDXContent' },
-        property: { type: 'Identifier', name: 'isMDXComponent' },
-        computed: false,
-        optional: false
-      },
-      right: { type: 'Literal', value: true }
-    }
-  })
+const transformer = (ast, file) => {
+  define(ast, file, { isMDXComponent: { type: 'Literal', value: true } }, { export: 'namespace' })
 }
 
 /**
