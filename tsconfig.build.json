@@ -1,0 +1,17 @@
+{
+  "include": ["lib"],
+  "compilerOptions": {
+    "checkJs": true,
+    "composite": true,
+    "declaration": true,
+    "declarationMap": true,
+    "emitDeclarationOnly": true,
+    "module": "node16",
+    "outDir": "types",
+    "rootDir": "lib",
+    "skipLibCheck": true,
+    "strict": true,
+    "target": "es2022",
+    "lib": ["es2022"]
+  }
+}

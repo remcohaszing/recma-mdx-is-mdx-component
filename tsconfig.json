@@ -1,12 +1,10 @@
 {
-  "include": ["*.js"],
+  "references": [{ "path": "./tsconfig.build.json" }],
+  "exclude": ["lib"],
   "compilerOptions": {
     "checkJs": true,
-    "declaration": true,
-    "declarationMap": true,
-    "emitDeclarationOnly": true,
     "module": "node16",
-    "noImplicitAny": true,
+    "noEmit": true,
     "skipLibCheck": true,
     "strict": true,
     "target": "es2022",

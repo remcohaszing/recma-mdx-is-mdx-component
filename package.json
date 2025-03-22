@@ -17,9 +17,13 @@
   "author": "Remco Haszing <remcohaszing@gmail.com>",
   "sideEffects": false,
   "type": "module",
-  "exports": "./index.js",
+  "exports": {
+    "types": "./types/recma-mdx-is-mdx-component.d.ts",
+    "default": "./lib/recma-mdx-is-mdx-component.js"
+  },
   "files": [
-    "./index.*"
+    "lib",
+    "types"
   ],
   "scripts": {
     "prepack": "tsc --build",
