@@ -14,7 +14,7 @@ test('define isMDXComponent', async () => {
     value,
     [
       'import {Fragment as _Fragment, jsx as _jsx} from "react/jsx-runtime";',
-      '(MDXContent.isMDXComponent = true);',
+      'MDXContent.isMDXComponent = true;',
       'function _createMdxContent(props) {',
       '  return _jsx(_Fragment, {});',
       '}',
