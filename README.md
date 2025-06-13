@@ -49,10 +49,11 @@ console.log(contents)
 Roughly yields:
 
 ```jsx
-MDXContent.isMDXComponent = true
 export default function MDXContent() {
   return <p>Some MDX content</p>
 }
+
+MDXContent.isMDXComponent = true
 ```
 
 ## API
